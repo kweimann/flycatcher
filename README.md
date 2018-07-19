@@ -7,12 +7,11 @@ in order to find cheapest round-trip flights from the selected airport.
 
 Example:
 ```
-round-trip to Verona               (VRN) 31 days (2018-07-29 - 2018-08-29) for 25.96 EUR
-round-trip to London Stansted      (STN) 28 days (2018-07-24 - 2018-08-21) for 25.98 EUR
-round-trip to Brüssel Zaventem     (BRU) 01 days (2018-08-29 - 2018-08-30) for 29.96 EUR
-round-trip to Rom Ciampino         (CIA) 22 days (2018-08-01 - 2018-08-23) for 29.97 EUR
-round-trip to Bologna              (BLQ) 31 days (2018-07-28 - 2018-08-28) for 29.98 EUR
-
+round-trip to Venedig Treviso      (TSF) 05 days (2018-08-20 - 2018-08-25) for 35.28 EUR
+round-trip to Verona               (VRN) 03 days (2018-08-26 - 2018-08-29) for 35.82 EUR
+round-trip to Brüssel Zaventem     (BRU) 07 days (2018-08-09 - 2018-08-16) for 36.20 EUR
+round-trip to Glasgow              (GLA) 04 days (2018-08-24 - 2018-08-28) for 39.01 EUR
+round-trip to Rom Ciampino         (CIA) 07 days (2018-08-16 - 2018-08-23) for 39.46 EUR
 ```
 
 ### Installation
