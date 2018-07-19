@@ -59,7 +59,7 @@ def find_cheapest_flights(flight_data,
     airports = {airport['id']: airport for airport in flight_data['airports']}
 
     if origin not in airports:
-        raise ValueError('`origin` is not in the airport list')
+        raise ValueError('%s is not in the airport list' % origin)
 
     # filter out all destinations that were not selected
     if selected_destinations is not None:
@@ -283,4 +283,4 @@ if __name__ == '__main__':
         except ValueError as e:
             logging.exception(e)
     else:
-        logging.error('Flight data not found: %s' % args.data)
+        logging.error('Flight data not found: %s' % path)

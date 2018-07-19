@@ -211,12 +211,12 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO,
                         format='%(asctime)s %(levelname)-8s %(name)-25.25s %(message)s')
 
-    path = args.out if args.out is not None else os.path.join(ROOT_DIR, 'ryanair_%s.p' % args.origin)
+    path = args.out if args.out is not None else os.path.join(ROOT_DIR, 'ryanair_%s.p' % args.origin.upper())
     date_from = None if args.date_from is None else datetime.strptime(args.date_from, '%Y-%m-%d')
     date_to = None if args.date_to is None else datetime.strptime(args.date_to, '%Y-%m-%d')
 
     with open(path, 'wb') as fh:
-        data = get_ryanair_flight_data(args.origin,
+        data = get_ryanair_flight_data(args.origin.upper(),
                                        date_from=date_from,
                                        date_to=date_to,
                                        language=args.language,
