@@ -1,5 +1,19 @@
 # Flycatcher
-Find cheapest flights from selected airport.
+Find cheapest flights from selected airport. 
+
+Flycatcher provides scripts to download flight data from the selected airport, store it
+in the internal flight data format and scan the flight data
+in order to find cheapest round-trip flights from the selected airport.
+
+Example:
+```
+round-trip to Verona               (VRN) 31 days (2018-07-29 - 2018-08-29) for 25.96 EUR
+round-trip to London Stansted      (STN) 28 days (2018-07-24 - 2018-08-21) for 25.98 EUR
+round-trip to Brüssel Zaventem     (BRU) 01 days (2018-08-29 - 2018-08-30) for 29.96 EUR
+round-trip to Rom Ciampino         (CIA) 22 days (2018-08-01 - 2018-08-23) for 29.97 EUR
+round-trip to Bologna              (BLQ) 31 days (2018-07-28 - 2018-08-28) for 29.98 EUR
+
+```
 
 ### Installation
 
