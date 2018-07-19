@@ -8,7 +8,8 @@ No installation required!
 ### Usage
 
 1. Download data using one of the provided downloaders or write your own downloader.
- Downloaded data must conform to the provided flight data format.
+ Downloaded data must conform to the provided flight data format. Available downloaders:
+    * `ryanair_downloader.py`
 2. Run `cheapest_flights.py` on the downloaded flight data to find cheapest flights.
 
 ### Flight Data Model
