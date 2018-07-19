@@ -262,25 +262,32 @@ if __name__ == '__main__':
         airports = {airport['id']: airport for airport in data['airports']}
         formatter = TripFormatter(airports)
 
-        try:
-            min_date = None if args.min_date is None else datetime.strptime(args.min_date, '%Y-%m-%d')
-            max_date = None if args.max_date is None else datetime.strptime(args.max_date, '%Y-%m-%d')
+        if args.origin not in airports:
+            logging.error('%s not found in the airport list. Available airport ids: %s'
+                          % (args.origin, ','.join(airports.keys())))
+        else:
+            try:
+                min_date = None if args.min_date is None else datetime.strptime(args.min_date, '%Y-%m-%d')
+                max_date = None if args.max_date is None else datetime.strptime(args.max_date, '%Y-%m-%d')
 
-            cheapest_flights = find_cheapest_flights(data,
-                                                     origin=args.origin,
-                                                     n=args.n,
-                                                     min_days=args.min_days,
-                                                     max_days=args.max_days,
-                                                     min_date=min_date,
-                                                     max_date=max_date,
-                                                     max_price=args.max_price,
-                                                     selected_destinations=args.selected_destinations,
-                                                     excluded_destinations=args.excluded_destinations,
-                                                     max_flights_per_airport=args.max_flights_per_airport)
+                cheapest_flights = find_cheapest_flights(data,
+                                                         origin=args.origin,
+                                                         n=args.n,
+                                                         min_days=args.min_days,
+                                                         max_days=args.max_days,
+                                                         min_date=min_date,
+                                                         max_date=max_date,
+                                                         max_price=args.max_price,
+                                                         selected_destinations=args.selected_destinations,
+                                                         excluded_destinations=args.excluded_destinations,
+                                                         max_flights_per_airport=args.max_flights_per_airport)
 
-            for to_flight, from_flight in cheapest_flights:
-                print(formatter.format(to_flight, from_flight))
-        except ValueError as e:
-            logging.exception(e)
+                for to_flight, from_flight in cheapest_flights:
+                    print(formatter.format(to_flight, from_flight))
+            except ValueError as e:
+                logging.exception(e)
+    elif args.data is None:
+        logging.error('Failed to automatically find flight data.'
+                      ' Please use -data argument to specify the path to flight data.')
     else:
         logging.error('Flight data not found: %s' % path)
